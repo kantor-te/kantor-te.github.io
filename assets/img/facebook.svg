@@ -1,3 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="10" height="20" viewBox="0 0 10 20">
-    <path fill="#4167B2" fill-rule="evenodd" d="M2.917 20v-8.945H0V7.5h2.917V4.687c0-1.484.404-2.636 1.212-3.457C4.937.41 6.01 0 7.349 0 8.433 0 9.318.052 10 .156V3.32H8.182c-.682 0-1.15.157-1.402.47-.202.26-.303.676-.303 1.25V7.5h3.22l-.455 3.555H6.477V20h-3.56z"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>6EDD83C4-1450-4F41-AD0A-853976FB71D1</title>
+    <desc>Created with sketchtool.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Full-HD-" transform="translate(-910.000000, -48.000000)" fill="#FFFFFF">
+            <g id="Group-3" transform="translate(846.000000, 48.000000)">
+                <path d="M64,0 L64,35.9786842 L83.1608421,35.9786842 L83.1608421,22.0808684 L78.4768947,22.0808684 L78.4768947,16.4073947 L83.1608421,16.4073947 L83.1608421,11.6426842 C83.1608421,8.17744737 85.9699474,5.36834211 89.4351842,5.36834211 L94.3318947,5.36834211 L94.3318947,10.4700789 L90.8280526,10.4700789 C89.7269737,10.4700789 88.8343158,11.3627368 88.8343158,12.4638158 L88.8343158,16.4074737 L94.2438684,16.4074737 L93.4962368,22.0809474 L88.8343158,22.0809474 L88.8343158,35.9786842 L99.9786842,35.9786842 L99.9786842,0 L64,0 Z" id="Path"></path>
+            </g>
+        </g>
+    </g>
 </svg>

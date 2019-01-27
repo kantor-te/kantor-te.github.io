@@ -1,0 +1,127 @@
+@media(max-width: 1440px) {
+    .top-contacts {
+        padding: 0px 65px;
+    }
+}
+
+@media(max-width: 1290px) {
+    .top-contacts .mobile-contacts-wrap {
+        display: block;
+    }
+
+    .top-contacts .social-icons, .top-contacts .contatcs-block {
+        display: none;
+    }
+
+    .logo-icon img {
+        width: 140px;
+    }
+
+    header .top-contacts {
+        height: 90px;
+    }
+}
+
+@media(max-width: 1160px) {
+    header .top-contacts {
+        padding: 0 40px;
+    }
+    .top-contacts.small-top-menu nav a {
+        font-size: 14px;
+    }
+}
+
+@media(max-width: 1030px) {
+    header nav {
+        width: 800px !important;
+    }
+
+    header nav a {
+        font-size: 18px !important;
+    }
+
+    .header-car-img {
+        width: 650px !important;
+        bottom: -50px !important;
+        left: calc(50% - 325px) !important;
+    }
+
+    .header-information-block {
+        width: 670px;
+    }
+
+    .header-information-title {
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .header-information-subtitle {
+        width: 600px;
+        font-size: 16px;
+    }
+}
+
+@media(max-width: 1000px) {
+    header .top-contacts.small-top-menu .mobile-contacts-wrap, 
+    header .top-contacts.small-top-menu nav {
+        display: none;
+    }
+
+    .top-contacts.small-top-menu .fa-bars {
+        display: block;
+    }
+}
+
+@media(max-width: 800px) {
+    header nav {
+        width: 670px !important;
+    }
+
+    header nav a {
+        font-size: 15px !important;
+    }
+
+    .header-car-img {
+        display: none;  
+    }
+
+    header {
+        min-height: 660px;
+        overflow: hidden;
+    }
+
+    .header-information-block {
+        width: 100%;
+        padding: 0 30px;
+        margin-top: 150px;
+    }
+
+    .header-information-title {
+        font-size: 30px;
+    }
+
+    .header-information-subtitle {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .call-to-me-btn {
+        width: 215px;
+        height: 55px;
+        font-size: 16px;
+    }
+}
+
+@media(max-width: 670px) {
+    header nav {
+        display: none !important;
+    }
+
+    header .top-contacts .mobile-contacts-wrap {
+        display: none;
+    }
+
+    header .top-contacts .fa-bars {
+        display: block;
+    }
+}

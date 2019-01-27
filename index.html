@@ -8,51 +8,174 @@
     <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./assets/app.css">
+    <link rel="stylesheet" href="./assets/media.css">
   </head>
   <body>
-    <!-- ==========================================================================-->
-    <!-- home-->
-    <!-- ==========================================================================-->
-    <div class="top-line">
-      <div class="container">
-        <div class="top-line-wr"><a class="logo" href="/"><img src="assets/img/logo.svg" width="169"></a>
-          <ul class="social-icons">
-            <li><a href="" target="_blank"><span class="icon icon--fb"></span></a></li>
-            <li><a href="" target="_blank"><span class="icon icon--ig"></span></a></li>
-            <li><a href="" target="_blank"><span class="icon icon--in"></span></a></li>
-            <li><a href="" target="_blank"><span class="icon icon--tw"></span></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <header class="header">
-      <div class="bg-right"><img src="assets/img/bg-1.svg"></div>
-      <div class="bg-left"><img src="assets/img/bg-2.svg"></div>
-      <div class="container">
-        <div class="header-wr">
-          <div>
-            <h1 class="header__title">Instant Booking Platform</h1>
-            <p class="header__descr">A mobile platform for booking attraction tickets and things to do</p>
-            <div class="header__divider"></div>
-            <p class="gray-descr">Reach more customers, sell more tours and activities, grow your business<br>Sign up for free and get early partner benefits!</p>
-            <!-- Begin MailChimp Signup Form-->
-            <link href="http://cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
-            <form class="validate header__form subscribe-form" id="mc-embedded-subscribe-form" action="https://lookee.us19.list-manage.com/subscribe/post?u=9cf7287d577a019265b291b77&amp;id=3e43f1ba13" method="post" name="subscribe">
-              <input class="email" id="mce-EMAIL" type="email" value="" name="EMAIL" placeholder="Enter email address" required>
-              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-              <div style="position: absolute; left: -5000px;" aria-hidden="true">
-                <input type="text" name="b_9cf7287d577a019265b291b77_3e43f1ba13" tabindex="-1" value="">
-              </div>
-              <button id="mc-embedded-subscribe" type="submit"><span>Subscribe</span><span class="input-arrow"></span></button>
-            </form>
-            <!-- End mc_embed_signup-->
+    <header>
+      <div class="top-contacts">
+          <div class="logo-icon">
+              <img src="assets/img/logo.png" alt="logo" />
           </div>
-          <div class="phones"><img src="assets/img/phone-1.png"><img src="assets/img/phone-2.png"></div>
-        </div>
+          <div class="social-icons">
+            <a href="">
+              <img src="assets/img/telegram.svg" alt="telegram" />
+            </a>
+            <a href="">
+                <img src="assets/img/facebook.svg" alt="facebook" />
+            </a>
+            <a href="">
+                <img src="assets/img/viber.svg" alt="viber" />
+            </a>
+            <a href="">
+              <img src="assets/img/instagram.svg" alt="instagram" />
+            </a>
+          </div>
+          <nav>
+              <a href="#car">Авто</a>
+              <a href="#how-we-work">Як ми працюємо</a>
+              <a href="#faq">Запитання та відповіді</a>
+              <a href="#why-we">Чому ми?</a>
+              <a href="#hot-deals">Гарячі пропозиції</a>
+            </nav>
+          <div class="contatcs-block">
+            <ul class="phoneNumbers-block">
+              <li>
+                <img src="assets//img/lifecell.png" alt="lifecell">
+                +380 (96) 76-754-45
+              </li>
+              <li>
+                <img src="assets/img/kyivstar.png" alt="kyivstar">
+                +380 (93) 76-754-45
+              </li>
+              <li>
+                <img src="assets/img/vodofone.png" alt="vodofone">
+                +380 (99) 76-754-45
+              </li>
+            </ul>
+            <div class="geo-block">
+              <img src="assets/img/placeholder.svg" alt="placeholder">
+              <div>Україна, Тернопіль вул. Львівська 54</div>
+            </div>
+          </div>
+          <div class="mobile-contacts-wrap">
+            <div id="mobile-contacts-btn">
+              Контакти
+              <i class="fa fa-sort-desc" aria-hidden="true"></i>
+            </div>
+            <div class="mobile-contacts-block">
+                <div class="contatcs-block">
+                  <ul class="phoneNumbers-block">
+                    <li>
+                      <img src="assets//img/lifecell.png" alt="lifecell">
+                      +380 (96) 76-754-45
+                    </li>
+                    <li>
+                      <img src="assets/img/kyivstar.png" alt="kyivstar">
+                      +380 (93) 76-754-45
+                    </li>
+                    <li>
+                      <img src="assets/img/vodofone.png" alt="vodofone">
+                      +380 (99) 76-754-45
+                    </li>
+                  </ul>
+                  <div class="geo-block">
+                    <img src="assets/img/placeholder.svg" alt="placeholder">
+                    <div>Україна, Тернопіль вул. Львівська 54</div>
+                  </div>
+                </div>
+                <div class="social-icons">
+                  <a href="">
+                    <img src="assets/img/telegram.svg" alt="telegram" />
+                  </a>
+                  <a href="">
+                      <img src="assets/img/fb-blue.svg" alt="facebook" />
+                  </a>
+                  <a href="">
+                      <img src="assets/img/viber.svg" alt="viber" />
+                  </a>
+                  <a href="">
+                    <img src="assets/img/inst.svg" alt="instagram" />
+                  </a>
+                </div>
+            </div>
+          </div>
+          <i class="fa fa-bars" aria-hidden="true"></i>
       </div>
+
+      <nav>
+        <a href="#car">Авто</a>
+        <a href="#how-we-work">Як ми працюємо</a>
+        <a href="#faq">Запитання та відповіді</a>
+        <a href="#why-we">Чому ми?</a>
+        <a href="#hot-deals">Гарячі пропозиції</a>
+      </nav>
+
+      <div class="header-information-block">
+        <h1 class="header-information-title">Доставка авто з аукціонів світу</h1>
+        <h3 class="header-information-subtitle">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+          labore et dolore magna aliqua.
+        </h3>
+        <a class="call-to-me-btn" href="#call-form">Перетелефонуйте мені</a>
+      </div>
+
+      <picture class="header-car-img">
+        <source type="image/webp" srcset="assets/img/mercedes-benz-img.webp" />
+        <img src="assets/img/mercedes-benz-img.png" alt="mercedes" />
+      </picture>
     </header>
+    
+    <aside class="mobile-menu">
+      <i class="fa fa-times clouse-mobile-menu-icon" aria-hidden="true"></i>
+      <nav>
+          <a href="#car">Авто</a>
+          <a href="#how-we-work">Як ми працюємо</a>
+          <a href="#faq">Запитання та відповіді</a>
+          <a href="#why-we">Чому ми?</a>
+          <a href="#hot-deals">Гарячі пропозиції</a>
+      </nav>
+      <p>Контакти</p>
+      <ul class="phoneNumbers-block">
+        <li>
+          <img src="assets//img/lifecell.png" alt="lifecell">
+          +380 (96) 76-754-45
+        </li>
+        <li>
+          <img src="assets/img/kyivstar.png" alt="kyivstar">
+          +380 (93) 76-754-45
+        </li>
+        <li>
+          <img src="assets/img/vodofone.png" alt="vodofone">
+          +380 (99) 76-754-45
+        </li>
+      </ul>
+      <div class="geo-block">
+        <img src="assets/img/placeholder.svg" alt="placeholder">
+        <div>Україна, Тернопіль вул. Львівська 54</div>
+      </div>
+
+      <div class="social-icons">
+        <a href="">
+          <img src="assets/img/telegram.svg" alt="telegram" />
+        </a>
+        <a href="">
+            <img src="assets/img/facebook.svg" alt="facebook" />
+        </a>
+        <a href="">
+            <img src="assets/img/viber.svg" alt="viber" />
+        </a>
+        <a href="">
+          <img src="assets/img/instagram.svg" alt="instagram" />
+        </a>
+      </div>
+    </aside>
+
+
+
     <div class="why-lookee">
       <div class="container">
         <h2 class="why-lookee__title">Why Lookee?</h2>
