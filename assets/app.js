@@ -19,10 +19,12 @@ $('#mobile-contacts-btn').click(() => {
 
 $('.top-contacts .fa-bars').click(() => {
     $(".clouse-mobile-menu-icon").css('display', 'block');
+    $('main').css('filter', 'grayscale(70%) blur(3px)');
     $('.mobile-menu').addClass('open');
 });
 
 $('.clouse-mobile-menu-icon').click(() => {
     $(".clouse-mobile-menu-icon").css('display', 'none');
+    $('main').css('filter', 'none');
     $('.mobile-menu').removeClass('open');
 });

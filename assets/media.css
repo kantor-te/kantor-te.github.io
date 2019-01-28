@@ -50,7 +50,7 @@
         width: 670px;
     }
 
-    .header-information-title {
+    .header-information-title, .auctions-section h2 {
         font-size: 40px;
         text-align: center;
     }
@@ -61,7 +61,7 @@
     }
 }
 
-@media(max-width: 1000px) {
+@media(max-width: 1040px) {
     header .top-contacts.small-top-menu .mobile-contacts-wrap, 
     header .top-contacts.small-top-menu nav {
         display: none;
@@ -88,15 +88,16 @@
     header {
         min-height: 660px;
         overflow: hidden;
+        padding-top: 120px;
     }
 
     .header-information-block {
         width: 100%;
-        padding: 0 30px;
-        margin-top: 150px;
+        padding: 0 15px;
+        margin-top: 65px;   
     }
 
-    .header-information-title {
+    .header-information-title, .auctions-section h2 {
         font-size: 30px;
     }
 
@@ -109,6 +110,10 @@
         width: 215px;
         height: 55px;
         font-size: 16px;
+    }
+
+    .auctions-section {
+        margin-top: 60px;
     }
 }
 
@@ -123,5 +128,53 @@
 
     header .top-contacts .fa-bars {
         display: block;
+    }
+}
+
+@media(max-width: 600px) {
+    .auctions-block {
+        width: 90%;
+    }
+
+    .header-information-title, .auctions-section h2 {
+        font-size: 23px;
+    }   
+
+    .auctions-desc-block {
+        bottom: 28px;
+    }
+
+    .auctions-desc-block h3 {
+        font-size: 16px;
+    }
+
+    .auctions-desc-btn {
+        margin-top: 6px;
+    }
+    
+}
+
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1740px;
     }
 }
