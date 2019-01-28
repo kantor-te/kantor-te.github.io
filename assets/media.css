@@ -141,11 +141,11 @@
     }   
 
     .auctions-desc-block {
-        bottom: 28px;
+        bottom: 40px;
     }
 
     .auctions-desc-block h3 {
-        font-size: 16px;
+        display: none;
     }
 
     .auctions-desc-btn {
