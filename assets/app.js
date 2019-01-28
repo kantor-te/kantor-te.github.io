@@ -4,10 +4,10 @@ $(window).scroll(e => {
     const { scrollY } = e.delegateTarget
     const isTop = $('.top-contacts').hasClass('small-top-menu');
 
-    if(scrollY === 0 && isTop) {
+    if(scrollY < 158 && isTop) {
         $('.top-contacts').removeClass('small-top-menu');
     }
-    if(scrollY > 80 && !isTop) {
+    if(scrollY > 158 && !isTop) {
         $('.top-contacts').addClass('small-top-menu');
     }
 });
