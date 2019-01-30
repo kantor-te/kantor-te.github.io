@@ -22,12 +22,46 @@
     }
 }
 
+@media(max-width: 1200px) {
+    .car-list {
+        justify-content: space-around;
+        padding: 0px;
+    }
+
+    #car {
+        clip-path: none;
+    }
+
+    #car .read-more-btn {
+        margin: 0 auto;
+        margin-top: 40px;
+    }
+
+    .read-more-mobile-target {
+        opacity: 0;
+        max-height: 0;
+        font-size: 0;
+        margin-top: 0px;
+    }
+}
+
 @media(max-width: 1160px) {
     header .top-contacts {
         padding: 0 40px;
     }
     .top-contacts.small-top-menu nav a {
         font-size: 14px;
+    }
+}
+
+@media(max-width: 1040px) {
+    header .top-contacts.small-top-menu .mobile-contacts-wrap, 
+    header .top-contacts.small-top-menu nav {
+        display: none;
+    }
+
+    .top-contacts.small-top-menu .fa-bars {
+        display: block;
     }
 }
 
@@ -50,7 +84,7 @@
         width: 670px;
     }
 
-    .header-information-title, .auctions-section h2 {
+    h2 {
         font-size: 40px;
         text-align: center;
     }
@@ -58,17 +92,6 @@
     .header-information-subtitle {
         width: 600px;
         font-size: 16px;
-    }
-}
-
-@media(max-width: 1040px) {
-    header .top-contacts.small-top-menu .mobile-contacts-wrap, 
-    header .top-contacts.small-top-menu nav {
-        display: none;
-    }
-
-    .top-contacts.small-top-menu .fa-bars {
-        display: block;
     }
 }
 
@@ -97,7 +120,7 @@
         margin-top: 65px;   
     }
 
-    .header-information-title, .auctions-section h2 {
+    h2 {
         font-size: 30px;
     }
 
@@ -136,7 +159,7 @@
         width: 90%;
     }
 
-    .header-information-title, .auctions-section h2 {
+    h2 {
         font-size: 23px;
     }   
 
@@ -152,6 +175,30 @@
         margin-top: 6px;
     }
     
+}
+
+@media (max-width: 576px) {
+    .car-item {
+        height: auto;
+    }
+
+    .car-item-desc {
+        padding: 10px 0px 0px 15px;
+    }
+
+    .car-item-title {
+        font-size: 17px;
+        margin-bottom: 12.5px;
+    }
+
+    .car-item-title::after {
+        bottom: -5.5px;
+    }
+
+    .car-item-price-row {
+        display: flex;
+        flex-direction: column-reverse;
+    }
 }
 
 

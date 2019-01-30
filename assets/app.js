@@ -28,3 +28,8 @@ $('.clouse-mobile-menu-icon').click(() => {
     $('main').css('filter', 'none');
     $('.mobile-menu').removeClass('open');
 });
+
+$('.read-more-btn').click((e) => {
+    const element = $(e.target).closest('.read-more-btn')[0];
+    $(element).toggleClass('active');
+});

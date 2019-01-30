@@ -244,6 +244,7 @@ nav a:hover {
 
 .mobile-contacts-block .contatcs-block {
     display: flex !important;
+    margin: 0 auto;
 }
 
 .mobile-contacts-block .contatcs-block .phoneNumbers-block li {
@@ -407,7 +408,7 @@ nav a:hover {
     margin-top: 130px;
 }
 
-.auctions-section h2 {
+h2 {
     opacity: 0.8;
     text-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
     font-size: 50px;
@@ -419,7 +420,7 @@ nav a:hover {
     position: relative;
 }
 
-.auctions-section h2::after {
+h2::after {
     display: block;
     content: "";
     width: 81px;
@@ -494,9 +495,155 @@ nav a:hover {
     opacity: 1;
 }
 
+.read-more-state {
+    display: none;
+}
+
+.read-more-target {
+    opacity: 0;
+    max-height: 0;
+    font-size: 0;
+    transition: .25s ease;
+    margin-top: 10px;
+}
+
+.read-more-mobile-target {
+    transition: .25s ease;
+}
+
+.read-more-state:checked ~ .read-more-wrap .read-more-target, 
+.read-more-state:checked ~ .read-more-wrap .read-more-mobile-target {
+    opacity: 1;
+    font-size: inherit;
+    max-height: 999em;
+}
+.read-more-state:checked ~ .read-more-btn {
+    content: "Сгорнути"
+}
+
+.read-more-btn div:last-of-type {
+    display: none;
+}
+
+.read-more-btn.active div:first-of-type {
+    display: none;
+}
+
+.read-more-btn.active div:last-of-type{
+    display: block;
+}
+
 #car {
-    background-image: url(img/car-section-bg.png);
-	background-repeat: repeat-x;
-    background-position: top center;
-    min-height: 1381px;
+    background-color: #000000ab;
+    margin-top: 59px;   
+    padding-bottom: 75px;
+    transition: all 0.2s;
+    border-radius: 5px;
+    clip-path: polygon(0% 2%, 47% 2%, 50% 0%, 53% 2%, 100% 2%, 100% 100%, 53% 100%, 50% 98%, 47% 100%, 0% 100%) ;
+}
+
+#car h2 {
+    padding-top: 103px;
+    color: #fff;
+    opacity: 1;
+}
+
+#car h2::after {
+    background-color: #f2ee18;  
+}
+
+.car-list {
+    padding: 0 50px;
+    display: flex;
+    flex-flow: row wrap;
+    flex-basis: 47px;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.read-more-state:checked ~ .read-more-wrap .car-item {
+    margin-top: 50px;
+}
+
+.car-item {
+    width: 481.8px;
+    height: 435.1px;
+    box-shadow: 0 9px 35px 0 rgba(0, 0, 0, 0.19);
+    background-color: #ffffff;
+    margin: 50px 23.5px 0 23.5px;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#car .read-more-btn {
+    content: "Показати більше";
+    width: 241px;
+    height: 56px;
+    box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.13);
+    background-color: #f2ee18;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    color: #333333;
+    margin: 89px auto 0px auto;
+    border-radius: 5px;
+}
+
+.car-item-img {
+    width: 100%;
+    height: 248px;
+    background-color: brown;
+}
+
+.car-item-desc {
+    padding: 14px 0px 0px 27px;
+}
+
+.car-item-title {
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: 0.1px;
+    color: #000000;
+    width: 100%;
+    position: relative;
+    margin-bottom: 37.5px;
+}
+
+.car-item-title::after {
+    display: block;
+    content: "";
+    width: 100%;
+    height: 1.8px;
+    background-color: #e4e5e9;
+    position: absolute;
+    left: 0;
+    bottom: -17.7px;
+}
+
+.car-item-price-row {
+    display: flex;
+}
+
+.car-item-price-row .price {
+    display: inline-block;
+    font-size: 21.6px;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 0.2px;
+    color: #0057ff;
+    width: 100px;
+}
+
+.car-item-price-row .price-by {
+    display: inline-block;
+    width: 220.5px;
+    font-size: 16.2px;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: 0.1px;
+    color: #000000;
 }
