@@ -1,5 +1,15 @@
 "use strict";
 
+$(document).ready(function() {
+    $('body').removeClass('preloader-site');
+    $('.loader').hide();
+    $('.top-menu').css('visibility', 'visible');
+});
+
+$(window).load(function(){
+    $('body').addClass('preloader-site');
+});
+
 $(window).scroll(e => {
     const { scrollY } = e.delegateTarget
     const isTop = $('.top-menu').hasClass('small-top-menu');
