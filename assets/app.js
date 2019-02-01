@@ -2,13 +2,13 @@
 
 $(window).scroll(e => {
     const { scrollY } = e.delegateTarget
-    const isTop = $('.top-contacts').hasClass('small-top-menu');
+    const isTop = $('.top-menu').hasClass('small-top-menu');
 
     if(scrollY < 158 && isTop) {
-        $('.top-contacts').removeClass('small-top-menu');
+        $('.top-menu').removeClass('small-top-menu');
     }
     if(scrollY > 158 && !isTop) {
-        $('.top-contacts').addClass('small-top-menu');
+        $('.top-menu').addClass('small-top-menu');
     }
 });
 
@@ -17,7 +17,7 @@ $('#mobile-contacts-btn').click(() => {
     $('#mobile-contacts-btn i').toggleClass('active');
 });
 
-$('.top-contacts .fa-bars').click(() => {
+$('.top-menu .fa-bars').click(() => {
     $(".clouse-mobile-menu-icon").css('display', 'block');
     $('main').css('filter', 'grayscale(70%) blur(3px)');
     $('.mobile-menu').addClass('open');

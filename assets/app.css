@@ -22,10 +22,6 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
-a {
-    text-decoration: none;
-}
-
 body {
     font-family: 'Rubik', sans-serif;
     margin: 0;
@@ -42,6 +38,33 @@ body {
     box-sizing: border-box;
 }
 
+h2 {
+    opacity: 0.8;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+    font-size: 50px;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 0.1px;
+    text-align: center;
+    color: #000000;
+    position: relative;
+}
+
+h2::after {
+    display: block;
+    content: "";
+    width: 81px;
+    height: 1px;
+    background-color: #b5b5b5;
+    position: absolute;
+    bottom: -15px;
+    left: calc(50% - 40.5px);
+}
+
+a {
+    text-decoration: none;
+}
+
 .container {
     width: 100%;
     padding-right: 15px;
@@ -50,35 +73,48 @@ body {
     margin-left: auto;
 }
 
-header {
-    background-image: url(img/header-bg.png);
-	background-repeat: repeat-x;
-	background-position: top center;
-    position: relative;
-    min-height: 910px;  
-    padding-top: 177px;
+.read-more-state {
+    display: none;
 }
 
-header nav {
-    height: 83px;
-    width: 1025px;
-    border-top: 2px solid #f8f9fa45;
-    border-bottom: 2px solid #f8f9fa45;
-    margin: 0px auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
+.read-more-target {
+    opacity: 0;
+    max-height: 0;
+    font-size: 0;
+    transition: .25s ease;
+    margin-top: 10px;
 }
 
-header nav a {
-    font-size: 21.5px;
-    letter-spacing: 0.1px;
-    color: #ffffff;
+.read-more-mobile-target {
+    transition: .25s ease;
 }
 
+.read-more-state:checked ~ .read-more-wrap .read-more-target, 
+.read-more-state:checked ~ .read-more-wrap .read-more-mobile-target {
+    opacity: 1;
+    font-size: inherit;
+    max-height: 999em;
+}
 
-.top-contacts {
+.read-more-btn {
+    cursor: pointer;
+}
+
+.read-more-btn div:last-of-type {
+    display: none;
+}
+
+.read-more-btn.active div:first-of-type {
+    display: none;
+}
+
+.read-more-btn.active div:last-of-type{
+    display: block;
+}
+
+/*////////////////// End read-more block //////////////////*/
+
+.top-menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -93,7 +129,7 @@ header nav a {
     transition: all 0.5s;
 }
 
-.top-contacts nav {
+.top-menu nav {
     display: none;
     margin: 0;
     padding: 0;
@@ -101,14 +137,14 @@ header nav a {
     width: 700px;
 }
 
-.top-contacts .fa-bars {
+.top-menu .fa-bars {
     color: #fff;
     font-size: 32px;
     cursor: pointer;
     display: none;
 }
 
-.top-contacts nav a {
+.top-menu nav a {
     font-size: 16px;
 }
 
@@ -117,85 +153,28 @@ nav a:hover {
     color: #ffffff;
 }
 
-.top-contacts.small-top-menu {
+.top-menu.small-top-menu {
     height: 90px;
     background-color: #000000fa;
 }
 
-.top-contacts.small-top-menu .logo-icon img {
+.top-menu.small-top-menu .logo-icon img {
     width: 140px;
 }
 
-.top-contacts.small-top-menu nav {
+.top-menu.small-top-menu nav {
     display: flex;
     padding: 0;
     margin: 0 30px;
 }
 
-.top-contacts.small-top-menu .mobile-contacts-wrap {
+.top-menu.small-top-menu .mobile-contacts-wrap {
     display: block;
 
 }
 
-.top-contacts.small-top-menu .social-icons, .top-contacts.small-top-menu .contatcs-block {
+.top-menu.small-top-menu .social-icons, .top-menu.small-top-menu .contatcs-block {
     display: none;
-}
-
-.social-icons a {
-    margin-right: 25px;
-}
-
-.social-icons a:last-of-type {
-    margin-right: 0px;
-}
-
-.social-icons a:hover {
-    text-decoration: none;
-}
-
-.contatcs-block {
-    display: flex;
-}
-
-.phoneNumbers-block {
-    margin-right: 35px;
-    margin-bottom: 0px;
-}
-
-.phoneNumbers-block li {
-    font-size: 19.4px;
-    font-weight: normal;
-    color: #ffffff;
-    list-style: none;
-    margin-bottom: 5px;
-}
-
-.phoneNumbers-block li:last-of-type {
-    margin-bottom: 0px;
-}
-
-.phoneNumbers-block li img {
-    width: 25px;
-    height: 25px;
-    margin-right: 12px;
-}
-
-.geo-block {
-    align-self: center;
-    display: flex;
-}
-
-.geo-block  div {
-    width: 189.9px;
-    font-size: 19.4px;
-    line-height: 1.41;
-    color: #ffffff;
-}
-
-.geo-block img {
-    width: 18px;
-    height: 25px;
-    margin-right: 15px;
 }
 
 #mobile-contacts-btn {
@@ -265,6 +244,35 @@ nav a:hover {
     visibility: visible;
 } 
 
+/*////////////////// End top-menu //////////////////*/
+
+header {
+    background-image: url(img/header-bg.png);
+	background-repeat: repeat-x;
+	background-position: top center;
+    position: relative;
+    min-height: 910px;  
+    padding-top: 177px;
+}
+
+header nav {
+    height: 83px;
+    width: 1025px;
+    border-top: 2px solid #f8f9fa45;
+    border-bottom: 2px solid #f8f9fa45;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+header nav a {
+    font-size: 21.5px;
+    letter-spacing: 0.1px;
+    color: #ffffff;
+}
+
 .header-information-block {
     width: 850px;
     margin: 45px auto 0 auto;
@@ -323,6 +331,65 @@ nav a:hover {
     max-width: 750px;
     width: 100%;
 }
+
+.social-icons a {
+    margin-right: 25px;
+}
+
+.social-icons a:last-of-type {
+    margin-right: 0px;
+}
+
+.social-icons a:hover {
+    text-decoration: none;
+}
+
+.contatcs-block {
+    display: flex;
+}
+
+.phoneNumbers-block {
+    margin-right: 35px;
+    margin-bottom: 0px;
+}
+
+.phoneNumbers-block li {
+    font-size: 19.4px;
+    font-weight: normal;
+    color: #ffffff;
+    list-style: none;
+    margin-bottom: 5px;
+}
+
+.phoneNumbers-block li:last-of-type {
+    margin-bottom: 0px;
+}
+
+.phoneNumbers-block li img {
+    width: 25px;
+    height: 25px;
+    margin-right: 12px;
+}
+
+.geo-block {
+    align-self: center;
+    display: flex;
+}
+
+.geo-block  div {
+    width: 189.9px;
+    font-size: 19.4px;
+    line-height: 1.41;
+    color: #ffffff;
+}
+
+.geo-block img {
+    width: 18px;
+    height: 25px;
+    margin-right: 15px;
+}
+
+/*////////////////// End header section //////////////////*/
 
 .mobile-menu {
     width: 265px;
@@ -408,28 +475,7 @@ nav a:hover {
     margin-top: 130px;
 }
 
-h2 {
-    opacity: 0.8;
-    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
-    font-size: 50px;
-    font-weight: 500;
-    font-style: normal;
-    letter-spacing: 0.1px;
-    text-align: center;
-    color: #000000;
-    position: relative;
-}
-
-h2::after {
-    display: block;
-    content: "";
-    width: 81px;
-    height: 1px;
-    background-color: #b5b5b5;
-    position: absolute;
-    bottom: -15px;
-    left: calc(50% - 40.5px);
-}
+/*////////////////// End mobile-menu //////////////////*/
 
 .auctions-block-wrap {
     max-width: 1371px;
@@ -495,43 +541,7 @@ h2::after {
     opacity: 1;
 }
 
-.read-more-state {
-    display: none;
-}
-
-.read-more-target {
-    opacity: 0;
-    max-height: 0;
-    font-size: 0;
-    transition: .25s ease;
-    margin-top: 10px;
-}
-
-.read-more-mobile-target {
-    transition: .25s ease;
-}
-
-.read-more-state:checked ~ .read-more-wrap .read-more-target, 
-.read-more-state:checked ~ .read-more-wrap .read-more-mobile-target {
-    opacity: 1;
-    font-size: inherit;
-    max-height: 999em;
-}
-.read-more-state:checked ~ .read-more-btn {
-    content: "Сгорнути"
-}
-
-.read-more-btn div:last-of-type {
-    display: none;
-}
-
-.read-more-btn.active div:first-of-type {
-    display: none;
-}
-
-.read-more-btn.active div:last-of-type{
-    display: block;
-}
+/*////////////////// End auctions section //////////////////*/
 
 #car {
     background-color: #000000ab;
@@ -561,10 +571,6 @@ h2::after {
     margin-top: 10px;
 }
 
-.read-more-state:checked ~ .read-more-wrap .car-item {
-    margin-top: 50px;
-}
-
 .car-item {
     width: 481.8px;
     height: 435.1px;
@@ -577,7 +583,6 @@ h2::after {
 }
 
 #car .read-more-btn {
-    content: "Показати більше";
     width: 241px;
     height: 56px;
     box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.13);
@@ -591,6 +596,14 @@ h2::after {
     color: #333333;
     margin: 89px auto 0px auto;
     border-radius: 5px;
+}
+
+.read-more-wrap .car-item.read-more-target {
+    margin: 0;
+}
+
+.read-more-state:checked ~ .read-more-wrap .car-item {
+    margin-top: 50px;
 }
 
 .car-item-img {
@@ -647,3 +660,139 @@ h2::after {
     letter-spacing: 0.1px;
     color: #000000;
 }
+
+/*////////////////// End car section //////////////////*/
+
+#how-we-work {
+    margin-top: 63.5px;
+}
+
+.work-steps-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.work-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 92px;
+    max-width: 418px;
+    padding: 0 30px;
+}
+
+.work-step-desc {
+    margin-top: 35px;
+}
+
+.work-step-title {
+    font-size: 25px;
+    font-weight: 600;
+    font-style: normal;
+    letter-spacing: 0px;
+    color: #323232;
+    text-align: center;
+}
+
+.work-step-text {
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1.87;
+    letter-spacing: 0px;
+    text-align: center;
+    color: #757575;
+    margin-top: 11px;
+}
+.how-we-work-car-block:first-of-type {
+    margin-top: 225px;
+}
+
+.how-we-work-car-block {
+    margin-top: 132px;
+    padding: 50px 0;
+    position: relative;
+    background-image: radial-gradient(circle at 1% 0, #4e4774, #343b57);
+    border-radius: 10px;
+    color: #ffffff;
+    font-weight: 300;
+}
+
+.how-we-work-car-block.left-car {
+    margin-left: 116px;
+    padding-right: 61px;
+}
+
+.how-we-work-car-block.right-car {
+    margin-right: 116px;
+    padding-left: 37px;
+}
+
+.how-we-work-car-block .read-more-wrap,
+.how-we-work-car-block .read-more-btn,
+.car-block-title {
+    max-width: 835px;
+}
+
+.car-block-title {
+    font-size: 30px;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 0.1px;
+}
+
+.how-we-work-car-block {
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 1.65;
+    letter-spacing: 0.1px;
+}
+.how-we-work-car-block .read-more-wrap .read-more-target {
+    margin-top: 0px;
+}
+
+.how-we-work-car-block .read-more-wrap {
+    margin-bottom: 40px;
+}
+
+.how-we-work-car-block.left-car .read-more-wrap, 
+.how-we-work-car-block.left-car .car-block-title,
+.how-we-work-car-block.left-car .read-more-btn {
+    margin-left: auto;
+    display: block;
+}
+
+.how-we-work-car-block .read-more-state:checked ~ .read-more-wrap .read-more-target {
+    margin-top: 10px;
+}
+
+.how-we-work-car-block .read-more-btn {
+    text-decoration-line: underline;
+}
+
+.how-we-work-car-block .list-item::before {
+    display: inline-block;
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: #f2ee18;
+    border-radius: 50%;
+    margin-bottom: 2px;
+    margin-right: 10px;
+}
+
+.how-we-work-car-block.right-car .image-block {
+    position: absolute;
+    right: -116px;
+    top: -60px;
+}
+
+.how-we-work-car-block.left-car .image-block {
+    position: absolute;
+    left: -116px;
+    top: -60px;
+}
+
+/*////////////////// End how-we-work sections //////////////////*/
+
