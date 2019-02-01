@@ -33,3 +33,8 @@ $('.read-more-btn').click((e) => {
     const element = $(e.target).closest('.read-more-btn')[0];
     $(element).toggleClass('active');
 });
+
+$('.accordion div').hide().prev().click(function () {
+    $('.accordion div').not(this).slideUp();
+    $(this).next().not(':visible').slideDown();
+});

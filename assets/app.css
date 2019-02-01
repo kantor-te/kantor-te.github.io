@@ -695,6 +695,22 @@ header nav a {
     text-align: center;
 }
 
+.work-step-icon {
+    position: relative;
+}
+
+.work-step-arrow {
+    position: absolute;
+    top: 45px;
+    right: calc(50% + 111px);
+}
+
+.work-step-arrow.left {
+    left: calc(50% + 111px);
+    right: auto;
+}
+
+
 .work-step-text {
     font-size: 15px;
     font-weight: normal;
@@ -796,3 +812,69 @@ header nav a {
 
 /*////////////////// End how-we-work sections //////////////////*/
 
+#faq {
+    margin-top: 178px;
+}
+
+.accordion {
+    margin: 37px auto 0 auto;
+    list-style: none;
+    max-width: 1542px;
+}
+
+.accordion li {
+    margin-top: 35px;
+    min-height: 75px;
+    box-shadow: 0 0 19px 0 rgba(0, 0, 0, 0.19);
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 26px 0;
+}
+
+.accordion li h3 {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.1px;
+    color: #000000;
+    padding-left: 52px;
+    position: relative;
+    cursor: pointer;
+}
+
+.accordion li h3::before {
+    display: inline-block;
+    content: "";
+    width: 16px;
+    height: 16px;
+    background-color: #f2ee18;
+    border-radius: 50%;
+    position: absolute;
+    top: 4px;
+    left: 20px;
+}
+
+.accordion li div {
+    padding: 20px 30px 20px 52px;
+    position: relative;
+}
+
+.accordion li div::before {
+    display: inline-block;
+    content: "";
+    width: 2px;
+    height: 100%;
+    background-color: #f2ee18;
+    position: absolute;
+    top: -4px;
+    left: 26.5px;
+}
+
+.accordion li p {
+    font-size: 17px;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 1.65;
+    letter-spacing: 0.1px;
+    color: #000000;
+}

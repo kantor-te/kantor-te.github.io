@@ -4,6 +4,12 @@
     }
 }
 
+@media(max-width: 1700px) {
+    .work-step-arrow {
+        display: none;
+    }
+}
+
 @media(max-width: 1620px) {
     .image-block img{
         width: 600px;
@@ -20,6 +26,10 @@
     .image-block {
         display: none;
     }
+
+    #faq {
+        margin-top: 63.5px;
+    }   
 
     .how-we-work-car-block.left-car, .how-we-work-car-block.right-car {
         margin-left: 20px;
@@ -260,11 +270,15 @@
         padding: 0 20px;
     }
 
-    .car-block-title {
+    .car-block-title, .accordion li h3 {
         font-size: 18px;
     }
 
     .how-we-work-car-block {
+        font-size: 15px;
+    }
+
+    .accordion li p {
         font-size: 15px;
     }
 }
