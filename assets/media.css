@@ -27,7 +27,7 @@
         display: none;
     }
 
-    #faq {
+    #faq, #why-we {
         margin-top: 63.5px;
     }   
 
@@ -102,6 +102,23 @@
         margin-right: 0px;
         padding-right: 25px;
         padding-left: 25px;
+    }
+
+    #call-form {
+        padding: 3px 0 27px 0;
+    }
+
+    #call-form form {
+        flex-direction: column;
+        margin-top: 35px;
+    }
+
+    #call-form input {
+        margin: 0 0 25px 0;
+    }
+
+    #call-form label {
+        bottom: 40px;
     }
 }
 
@@ -198,6 +215,10 @@
     .auctions-section {
         margin-top: 60px;
     }
+
+    #call-form {
+        padding: 10px 0 27px 0;
+    }
 }
 
 @media(max-width: 670px) {
@@ -219,7 +240,7 @@
         width: 90%;
     }
 
-    h2 {
+    h2, .hot-deals-title {
         font-size: 23px;
     }   
 
@@ -234,7 +255,10 @@
     .auctions-desc-btn {
         margin-top: 6px;
     }
-    
+
+    #call-form {
+        padding: 40px 0 27px 0;
+    }
 }
 
 @media (max-width: 576px) {
@@ -274,12 +298,20 @@
         font-size: 18px;
     }
 
-    .how-we-work-car-block {
+    .how-we-work-car-block,
+    .accordion li p,
+    .why-we-blue-block,
+    .why-we-desc-block p,
+    .mission-block {
         font-size: 15px;
     }
 
-    .accordion li p {
-        font-size: 15px;
+    .hot-deals-social-icons img {
+        width: 50px;
+    }
+
+    .hot-deals-title {
+        padding: 0 10px;
     }
 }
 
