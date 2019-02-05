@@ -107,6 +107,75 @@ body.preloader-site {
     margin-left: auto;
 }
 
+.modal {
+    visibility: hidden;
+    display: flex;
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(22, 25, 32, 0.68);
+}
+
+.modal.active {
+    visibility: visible;
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    position: relative;
+}
+
+/* The Close Button */
+.modal .close {
+    display: flex;
+    justify-content: flex-end;
+    color: #aaaaaa;
+    font-size: 28px;
+    float: right;
+}
+
+.modal .close:hover,
+.modal .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content .slider-wrap {
+    max-width: 593px;
+    max-height: 577px;
+    margin-right: 150px;    
+    float: left;
+}
+
+.modal-content .slider-nav {
+    transform: rotate(90deg);
+    top: -345px;
+    right: -375px;
+}
+
+.modal-content .slider-nav .slide-nav-item img {
+    width: 125px;
+    height: 125px;
+    margin: 10px;
+}
+
+.modal-content .slider-for img {
+    width: 593px;
+    height: 577px;
+}
+
 .read-more-state {
     display: none;
 }
@@ -584,7 +653,10 @@ header nav a {
     padding-bottom: 75px;
     transition: all 0.2s;
     border-radius: 5px;
-    clip-path: polygon(0% 2%, 47% 2%, 50% 0%, 53% 2%, 100% 2%, 100% 100%, 53% 100%, 50% 98%, 47% 100%, 0% 100%) ;
+}
+
+#car .modal-content {
+    padding: 0 20px 0 0;
 }
 
 #car h2 {
@@ -604,6 +676,34 @@ header nav a {
     flex-basis: 47px;
     justify-content: space-between;
     margin-top: 10px;
+}
+
+#car .modal-content {
+    max-width: 1331px;
+    max-height: 575px;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.angle-left, .angle-right {
+    width: 22px;
+    height: 36px;
+    opacity: 0.36;
+    background-color: #ffffff;
+    position: absolute;
+    top: calc(50% - 36px);
+}
+
+.angle-left:hover, .angle-right:hover {
+    opacity: 1;
+}
+
+.angle-left {
+    left: -35px;
+}
+
+.angle-right {
+    right: -35px;
 }
 
 .car-item {
@@ -634,7 +734,8 @@ header nav a {
 }
 
 .read-more-wrap .car-item.read-more-target {
-    margin: 0;
+    margin-top: 0;
+    margin-bottom: 0px;
 }
 
 .read-more-state:checked ~ .read-more-wrap .car-item {
@@ -644,11 +745,26 @@ header nav a {
 .car-item-img {
     width: 100%;
     height: 248px;
-    background-color: brown;
+    overflow: hidden;
+}
+
+.car-item-img  img{
+    height: auto;
+    width: 100%;
+}
+
+.car-slider img{
+    max-width: 593px;
+    max-height: 577px;
 }
 
 .car-item-desc {
     padding: 14px 0px 0px 27px;
+}
+
+.modal-content .car-item-desc {
+    display: flex;
+    flex-direction: column;
 }
 
 .car-item-title {

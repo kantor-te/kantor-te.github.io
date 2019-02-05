@@ -1,14 +1,14 @@
 "use strict";
 
+// $(window).load(function(){
+//     $('body').addClass('preloader-site');
+// });
+
 $(document).ready(function() {
     $('body').removeClass('preloader-site');
     $('.loader').hide();
     $('.top-menu').css('visibility', 'visible');
     initEventHandlers();
-});
-
-$(window).load(function(){
-    $('body').addClass('preloader-site');
 });
 
 function initEventHandlers() {
@@ -64,5 +64,39 @@ function initEventHandlers() {
         
         
         $('body,html').animate({scrollTop: top}, 1500);
-    })
+    });
+
+    $('.car-item').click( function(event) {
+        $(this).find('.modal').addClass('active');
+    });
+
+    $('.close').click(function(event) {
+        $(this).parent().parent().removeClass('active');
+
+        event.stopPropagation()
+    });
+
+    $('.slider-for').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: '.slider-nav'
+    });
+    $('.slider-nav').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        asNavFor: '.slider-for',
+        dots: false,
+        focusOnSelect: true,
+        infinite: true
+    });
+
+    $('.angle-left').click(function() {
+        $(this).parent().find('.car-slider').slick('slickNext')
+    });
+
+    $('.angle-right').click(function() {
+        $(this).parent().find('.car-slider').slick('slickPrev');
+    });
 }
