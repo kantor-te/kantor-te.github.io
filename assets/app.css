@@ -130,10 +130,10 @@ body.preloader-site {
 .modal-content {
     background-color: #fefefe;
     margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
     width: 80%;
+    min-width: 300px;
     position: relative;
+    border-radius: 28px;
 }
 
 /* The Close Button */
@@ -142,7 +142,10 @@ body.preloader-site {
     justify-content: flex-end;
     color: #aaaaaa;
     font-size: 28px;
-    float: right;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 1;
 }
 
 .modal .close:hover,
@@ -150,30 +153,6 @@ body.preloader-site {
     color: #000;
     text-decoration: none;
     cursor: pointer;
-}
-
-.modal-content .slider-wrap {
-    max-width: 593px;
-    max-height: 577px;
-    margin-right: 150px;    
-    float: left;
-}
-
-.modal-content .slider-nav {
-    transform: rotate(90deg);
-    top: -345px;
-    right: -375px;
-}
-
-.modal-content .slider-nav .slide-nav-item img {
-    width: 125px;
-    height: 125px;
-    margin: 10px;
-}
-
-.modal-content .slider-for img {
-    width: 593px;
-    height: 577px;
 }
 
 .read-more-state {
@@ -645,6 +624,38 @@ header nav a {
     opacity: 1;
 }
 
+.auctions-block .modal-content {
+    max-width: 1331px;
+}
+
+.modal-content .auctions-block {
+    height: 262px;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.auctions-block .modal-content .auctions-title {
+    font-size: 35px;
+    font-weight: normal;
+    letter-spacing: 0.1px;
+    text-align: center;
+    color: #554d4d;
+    margin-top: 40px;
+}
+
+.action-modal-desc {
+    padding: 38px 55px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 1.65;
+    letter-spacing: 0.1px;
+    color: #554d4d;
+}
+
 /*////////////////// End auctions section //////////////////*/
 
 #car {
@@ -682,7 +693,30 @@ header nav a {
     max-width: 1331px;
     max-height: 575px;
     overflow: hidden;
-    border-radius: 15px;
+}
+
+.modal-content .slider-wrap {
+    max-width: 593px;
+    max-height: 577px;
+    margin-right: 150px;    
+    float: left;
+}
+
+.modal-content .slider-nav {
+    transform: rotate(90deg);
+    top: -345px;
+    right: -375px;
+}
+
+.modal-content .slider-nav .slide-nav-item img {
+    width: 125px;
+    height: 125px;
+    margin: 10px;
+}
+
+.modal-content .slider-for img {
+    width: 593px;
+    height: 577px;
 }
 
 .angle-left, .angle-right {

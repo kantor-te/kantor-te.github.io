@@ -66,8 +66,12 @@ function initEventHandlers() {
         $('body,html').animate({scrollTop: top}, 1500);
     });
 
-    $('.car-item').click( function(event) {
+    $('.car-item').click( function() {
         $(this).find('.modal').addClass('active');
+    });
+
+    $('.auctions-section .auctions-desc-btn').click(function() {
+        $(this).parent().parent().find('.modal').addClass('active');
     });
 
     $('.close').click(function(event) {

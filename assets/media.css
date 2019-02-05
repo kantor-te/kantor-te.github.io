@@ -55,6 +55,14 @@
     .top-menu {
         padding: 0px 65px;
     }
+
+    .auctions-block .modal-content .auctions-title {
+        margin-top: 15px;
+    }
+
+    .action-modal-desc {
+        padding: 10px 20px;
+    }
 }
 
 @media(max-width: 1290px) {
@@ -73,9 +81,18 @@
     header .top-menu {
         height: 90px;
     }
+    
 }
 
 @media(max-width: 1200px) {
+    .action-modal-desc {
+        font-size: 19px;
+    }
+
+    .modal-content .auctions-block {
+        height: 200px;
+    }
+
     .car-list {
         justify-content: space-around;
         padding: 0px;
@@ -166,11 +183,19 @@
         width: 600px;
         font-size: 16px;
     }
+
+    .modal-content .auctions-block {
+        height: 155px;
+    }
 }
 
 @media(max-width: 800px) {
     header nav {
         width: 670px !important;
+    }
+
+    .action-modal-desc {
+        font-size: 18px;
     }
 
     header nav a {
@@ -193,7 +218,7 @@
         margin-top: 65px;   
     }
 
-    h2, .header-information-title {
+    h2, .header-information-title, .auctions-title {
         font-size: 30px;
     }
 
@@ -229,6 +254,10 @@
     header .top-menu .fa-bars {
         display: block;
     }
+
+    .modal-content .auctions-block {
+        height: 100px;
+    }
 }
 
 @media(max-width: 600px) {
@@ -236,9 +265,13 @@
         width: 90%;
     }
 
-    h2, .hot-deals-title {
+    h2, .hot-deals-title, .auctions-title, .hot-deals-title {
         font-size: 23px;
     }   
+
+    .hot-deals-title img {
+        width: 25px;
+    }
 
     .auctions-desc-block {
         bottom: 40px;
@@ -275,6 +308,10 @@
         bottom: -5.5px;
     }
 
+    .action-modal-desc {
+        font-size: 17px
+    }
+
     .car-item-price-row {
         display: flex;
         flex-direction: column-reverse;
@@ -290,7 +327,7 @@
         padding: 0 20px;
     }
 
-    .car-block-title, .accordion li h3 {
+    .car-block-title, .accordion li h3, .auctions-title, .hot-deals-title {
         font-size: 18px;
     }
 
@@ -298,16 +335,43 @@
     .accordion li p,
     .why-we-blue-block,
     .why-we-desc-block p,
-    .mission-block {
+    .mission-block,
+    .action-modal-desc {
         font-size: 15px;
     }
 
     .hot-deals-social-icons img {
-        width: 50px;
+        width: 40px;
     }
 
     .hot-deals-title {
         padding: 0 10px;
+    }
+
+    .modal-content .auctions-block {
+        height: 80px;
+    }
+
+    .modal {
+        padding: 30px 0;
+    }
+
+    .modal-content {
+        width: 95%;
+    }
+
+    #call-form button {
+        width: 185px;
+        height: 52px;
+    }
+
+    #call-form input {
+        width: 250px;
+        height: 55px;
+    }
+
+    #call-form label img {
+        display: none;
     }
 }
 
