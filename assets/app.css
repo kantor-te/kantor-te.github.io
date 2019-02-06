@@ -1023,8 +1023,18 @@ header nav a {
     letter-spacing: 0.1px;
     color: #000000;
     padding-left: 52px;
+    padding-right: 24px;
     position: relative;
     cursor: pointer;
+}
+
+.accordion li .fa-chevron-down {
+    color: #07133d;
+    float: right;
+}
+
+.accordion li .fa-chevron-down.active {
+    transform: rotate(180deg);
 }
 
 .accordion li h3::before {

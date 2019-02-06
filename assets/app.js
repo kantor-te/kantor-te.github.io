@@ -49,6 +49,7 @@ function initEventHandlers() {
     $('.accordion div').hide().prev().click(function () {
         $('.accordion div').not(this).slideUp();
         $(this).next().not(':visible').slideDown();
+        $(this).find('.fa-chevron-down').toggleClass('active');
     });
 
     $('#call-form input').change((event) => (event.target.value !== '') ?
