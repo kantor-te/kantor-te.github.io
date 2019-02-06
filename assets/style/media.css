@@ -373,6 +373,10 @@
     #call-form label img {
         display: none;
     }
+
+    .accordion li .fa-chevron-down {
+        display: none;
+    }
 }
 
 
