@@ -142,6 +142,10 @@
     .top-menu.small-top-menu nav a {
         font-size: 14px;
     }
+
+    .modal-content .slider-nav {
+        display: none;
+    }
 }
 
 @media(max-width: 1040px) {
@@ -240,6 +244,10 @@
     #call-form {
         padding: 10px 0 27px 0;
     }
+
+    .modal-content .car-item-desc {
+        padding: 0 25px 30px 25px;
+    }
 }
 
 @media(max-width: 670px) {
@@ -257,6 +265,10 @@
 
     .modal-content .auctions-block {
         height: 100px;
+    }
+
+    .modal-content .car-item-desc .call-to-me-btn {
+        margin-top: 20px;
     }
 }
 
@@ -375,6 +387,10 @@
     }
 
     .accordion li .fa-chevron-down {
+        display: none;
+    }
+
+    .modal-content .slick-prev, .modal-content .slick-next {
         display: none;
     }
 }

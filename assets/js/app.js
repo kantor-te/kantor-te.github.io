@@ -84,24 +84,26 @@ function initEventHandlers() {
     $('.slider-for').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
-        arrows: false,
+        dots: true,
+        arrows: true,
         fade: true,
+        adaptiveHeight: true,
         asNavFor: '.slider-nav'
     });
     $('.slider-nav').slick({
-        slidesToShow: 3,
+        slidesToShow: 4,
         slidesToScroll: 1,
         asNavFor: '.slider-for',
         dots: false,
+        arrows: false,
         focusOnSelect: true,
         infinite: true
     });
 
-    $('.angle-left').click(function() {
-        $(this).parent().find('.car-slider').slick('slickNext')
-    });
+    $('.modal-content .call-to-me-btn').click(function() {
+        const modal = $(this).parents('.modal')[0];
 
-    $('.angle-right').click(function() {
-        $(this).parent().find('.car-slider').slick('slickPrev');
+        $(modal).removeClass('active');
+        event.stopPropagation();
     });
 }
