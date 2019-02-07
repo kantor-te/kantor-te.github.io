@@ -1167,7 +1167,7 @@ header nav a {
 /*////////////////// End hot-deals sections //////////////////*/
 
 #call-form {
-    background-image: url(img/call-form-bg.png);
+    background-image: url(../img/call-form-bg.png);
 	background-repeat: repeat-x;
 	background-position: top center;
     margin-top: 63px;
