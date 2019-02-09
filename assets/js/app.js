@@ -106,4 +106,16 @@ function initEventHandlers() {
         $(modal).removeClass('active');
         event.stopPropagation();
     });
+
+    $("form").on("submit", function(t){
+        t.preventDefault();
+        const e=$(this);
+        e[0][0].value = (e[0][0].value === "") ? `dont_id${Math.random()}@input.com` : e[0][0].value;
+        
+        $.ajax({type:e.attr("method"),
+            url:e.attr("action").replace("/post?","/post-json?").concat("&c=?"),data:e.serialize(),
+            timeout:5e3,cache:!1,dataType:"jsonp",contentType:"application/json; charset=utf-8",
+            success:function(t){alert("Ми приняли інформацію, дякую"),e[0].reset(),
+            $("form input, form textarea").removeClass("active")}})
+    });
 }
