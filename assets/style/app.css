@@ -757,27 +757,6 @@ header nav a {
     border-top-right-radius: 28px;
 }
 
-/* .angle-left, .angle-right {
-    width: 22px;
-    height: 36px;
-    opacity: 0.36;
-    background-color: #ffffff;
-    position: absolute;
-    top: calc(50% - 36px);
-}
-
-.angle-left:hover, .angle-right:hover {
-    opacity: 1;
-}
-
-.angle-left {
-    left: -35px;
-}
-
-.angle-right {
-    right: -35px;
-} */
-
 .car-item {
     width: 481.8px;
     height: 435.1px;
@@ -789,7 +768,7 @@ header nav a {
     cursor: pointer;
 }
 
-#car .read-more-btn {
+#car label.read-more-btn {
     width: 241px;
     height: 56px;
     box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.13);
