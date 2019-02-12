@@ -63,8 +63,13 @@ function initEventHandlers() {
         const id  = $(event.target).attr('href');
         const top = $(id).offset().top;
         
-        
         $('body,html').animate({scrollTop: top}, 1500);
+
+        if($('.mobile-menu').hasClass('open')) {
+            $(".clouse-mobile-menu-icon").css('display', 'none');
+            $('main').css('filter', 'none');
+            $('.mobile-menu').removeClass('open');
+        }
     });
 
     $('.car-item').click( function() {
