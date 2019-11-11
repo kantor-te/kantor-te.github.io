@@ -35,9 +35,10 @@
     </div>
     <aside class="mobile-menu">
       <i class="fa fa-times clouse-mobile-menu-icon" aria-hidden="true"></i>
-      <nav>
+      <nav class="main-nav">
         <a href="#car">Авто</a>
         <a href="#how-we-work">Як ми працюємо</a>
+        <a href="#calculator">Калькулятор</a>
         <a href="#faq">Запитання та відповіді</a>
         <a href="#why-we">Чому ми?</a>
         <a href="#hot-deals">Гарячі пропозиції</a>
@@ -59,7 +60,7 @@
       </ul>
       <div class="geo-block">
         <img src="./assets/img/placeholder.svg" alt="placeholder" />
-        <div>Україна, Тернопіль вул. Текстильна 28ч, трц Подоляни 2 поверх</div>
+        <div>Україна, Тернопіль вул. Підлісна 21</div>
       </div>
 
       <div class="social-icons">
@@ -112,9 +113,10 @@
               <img src="./assets/img/instagram.svg" alt="instagram" />
             </a>
           </div>
-          <nav>
+          <nav class="main-nav">
             <a href="#car">Авто</a>
             <a href="#how-we-work">Як ми працюємо</a>
+            <a href="#calculator">Калькулятор</a>
             <a href="#faq">Запитання та відповіді</a>
             <a href="#why-we">Чому ми?</a>
             <a href="#hot-deals">Гарячі пропозиції</a>
@@ -123,20 +125,20 @@
             <ul class="phoneNumbers-block">
               <li>
                 <img src="./assets/img/kyivstar.png" alt="kyivstar" />
-                +38 (063) 818-32-32
+                +38 (098) 08-98-009
               </li>
               <li>
                 <img src="./assets/img/vodofone.png" alt="vodofone" />
-                +38 (095) 590-32-32
+                +38 (066) 08-98-009 
               </li>
               <li>
                 <img src="./assets/img/lifecell.png" alt="lifecell" />
-                +38 (067) 256-82-00
+                +38 (093) 08-98-009
               </li>
             </ul>
             <div class="geo-block">
               <img src="./assets/img/placeholder.svg" alt="placeholder" />
-              <div>Україна, Тернопіль вул. Текстильна 28ч, трц Подоляни 2 поверх</div>
+              <div>Україна, Тернопіль вул. Підлісна 21</div>
             </div>
           </div>
           <div class="mobile-contacts-wrap">
@@ -149,20 +151,20 @@
                 <ul class="phoneNumbers-block">
                   <li>
                     <img src="./assets/img/kyivstar.png" alt="kyivstar" />
-                    +38 (063) 818-32-32
+                    +38 (098) 08-98-009
                   </li>
                   <li>
                     <img src="./assets/img/vodofone.png" alt="vodofone" />
-                    +38 (095) 590-32-32
+                    +38 (066) 08-98-009 
                   </li>
                   <li>
                     <img src="./assets/img/lifecell.png" alt="lifecell" />
-                    +38 (067) 256-82-00
+                    +38 (093) 08-98-009
                   </li>
                 </ul>
                 <div class="geo-block">
                   <img src="./assets/img/placeholder.svg" alt="placeholder" />
-                  <div>Україна, Тернопіль вул. Текстильна 28ч, трц Подоляни 2 поверх</div>
+                  <div>Україна, Тернопіль вул. Підлісна 21</div>
                 </div>
               </div>
               <div class="social-icons">
@@ -192,9 +194,11 @@
 
         <!--////////////////// End top-menu //////////////////-->
 
-        <nav>
+        <nav class="main-nav">
           <a href="#car">Авто</a>
           <a href="#how-we-work">Як ми працюємо</a>
+          
+        <a href="#calculator">Калькулятор</a>
           <a href="#faq">Запитання та відповіді</a>
           <a href="#why-we">Чому ми?</a>
           <a href="#hot-deals">Гарячі пропозиції</a>
@@ -2788,6 +2792,10 @@
                     <div class="step-panel">
                       <div class="step-container">
                         <div id="vehicle-data">
+                          <div class="form-group  row">
+                            <label for="auctionType" class="col-form-label col-sm-6">Аукціон</label>
+                            <label id="auctionType" class="col-form-label col-sm-6"></label>
+                          </div>  
                           <div class="form-group lotNum row">
                             <label for="lotNum" class="col-form-label col-sm-6"
                               >Номер лоту</label
@@ -2910,6 +2918,7 @@
                     <br />
                     *вартість не включає в себе доставку авто по Україні               
                 </p>
+                <p id="needMoreData"> *Не повні дані для підрахунку</p>
             </div>
           </div>
           <div class="how-we-work-car-block" id="no-results">
@@ -3399,7 +3408,6 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
-    <script src="./libs/jquery-3.2.1.js"></script>
     <script src="./libs/slick/slick.js"></script>
     <script
       type="text/javascript"

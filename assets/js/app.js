@@ -182,19 +182,21 @@ function initEventHandlers() {
           .css("display", "block")
   );
 
-  $('a[href^="#"]').click(event => {
+  $('.main-nav a[href^="#"]').click(event => {
     event.preventDefault();
 
-    const id  = $(event.target).attr('href');
-    if (id !== '#ms-calc' && id !== '#ms-auction') {
-        const top = $(id).offset().top;
-        
-        $('body,html').animate({scrollTop: top}, 1500);
-        if($('.mobile-menu').hasClass('open')) {
-            $(".clouse-mobile-menu-icon").css('display', 'none');
-            $('main').css('filter', 'none');
-            $('.mobile-menu').removeClass('open');
-        }
+    const id = $(event.target).attr("href");
+    const top = $(id).offset().top;
+    window.scrollTo({
+      top: top - 90,
+      left: 0,
+      behavior: "smooth"
+    });
+
+    if ($(".mobile-menu").hasClass("open")) {
+      $(".clouse-mobile-menu-icon").css("display", "none");
+      $("main").css("filter", "none");
+      $(".mobile-menu").removeClass("open");
     }
   });
 
@@ -378,6 +380,8 @@ function onSelectAuction() {
     $step_active = $progressSteps.find(".is-active");
     $step_active.removeClass("is-active");
     $step_active.prev().addClass("is-active");
+    $("#lotNum").val("");
+    $("#lot-price").val("");
     $("#results").css("display", "none");
   });
   // dropdowns
@@ -385,7 +389,7 @@ function onSelectAuction() {
     auctionDataReq.type = $(this).attr("data-value");
     $btn_next.prop("disabled", false);
     auctionDataReq.lotNum = 0;
-    $("#lotNum").val("");
+    $("#auctionType").text($(this).text());
     $auctionsDdBtn.children().text($(this).text() || "Виберіть аукціон");
   });
 
@@ -396,14 +400,18 @@ function onSelectAuction() {
 }
 function carPrise(data) {
   let date = new Date();
+  if (isNaN(data.vol)) {
+    $("#excise")
+      .css("color", "red")
+      .parent()
+      .css("display", "block");
+    $("#needMoreData").css("display", "block");
+    return 1;
+  } else {
+    $("#excise").css("color", "white");
+    $("#needMoreData").css("display", "none");
+  }
   switch (data.fuelType) {
-    case "B": {
-      const coef = parseFloat(data.vol) <= 3000 ? 50 : 100;
-      const ages = date.getFullYear() - parseInt(data.year);
-      const age = (ages < 15 ? ages : 15);
-      const engine = parseInt(data.vol) / 1000;
-      return coef * age * engine;
-    }
     case "D": {
       const coef = parseFloat(data.vol) <= 3500 ? 75 : 150;
       const ages = date.getFullYear() - parseInt(data.year);
@@ -413,14 +421,12 @@ function carPrise(data) {
     }
     case "E":
       return parseInt(data.kvt);
-    case "H":
+    default:
       const coef = parseFloat(data.vol) <= 3500 ? 50 : 100;
       const ages = date.getFullYear() - parseInt(data.year);
       const age = ages < 15 ? ages : 15;
       const engine = parseInt(data.vol) / 1000;
       return coef * age * engine;
-    default:
-      return 0;
   }
 }
 function calcPrice(carData) {
@@ -554,20 +560,19 @@ const getFees = (price, feeRange) => {
 const calcFee = (lotPrice, type) => {
   switch (type) {
     case "c":
-      return (
-        getFees(parseInt(lotPrice), Fees.copart.salePrice) +
-        getFees(parseInt(lotPrice), Fees.copart.olb) +
-        59 +
-        39
-      );
+      const saleFee =
+        parseInt(lotPrice) < 10000
+          ? getFees(parseInt(lotPrice), Fees.copart.salePrice)
+          : parseInt(lotPrice) * 0.04;
+      return saleFee + getFees(parseInt(lotPrice), Fees.copart.olb) + 59 + 39;
     case "i": {
       const standard = getFees(parseInt(lotPrice), Fees.iaai.standard),
         internet = getFees(parseInt(lotPrice), Fees.iaai.internetBit),
         graterRange =
-          parseInt(lotPrice) > 7500 && parseInt(lotPrice) < 20000
-            ? parseFloat(lotPrice) * 0.01
+          parseInt(lotPrice) >= 7500 && parseInt(lotPrice) < 20000
+            ? parseFloat(lotPrice) * 0.01 + 500
             : 0,
-        grater = parseInt(lotPrice) > 20000 ? parseFloat(lotPrice) * 0.04 : 0;
+        grater = parseInt(lotPrice) >= 20000 ? parseFloat(lotPrice) * 0.04 : 0;
       return standard + internet + grater + 59 + graterRange;
     }
     default:
