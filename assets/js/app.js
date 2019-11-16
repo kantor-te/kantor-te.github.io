@@ -411,19 +411,20 @@ function carPrise(data) {
     $("#excise").css("color", "white");
     $("#needMoreData").css("display", "none");
   }
+  const isNov = date.getMonth() + 1 >= 11 ? 1 : 0; 
   switch (data.fuelType) {
     case "D": {
       const coef = parseFloat(data.vol) <= 3500 ? 75 : 150;
-      const ages = date.getFullYear() - parseInt(data.year);
+      const ages = date.getFullYear() - parseInt(data.year) + isNov;
       const age = ages < 15 ? ages : 15;
-      const engine = parseInt(data.vol) / 1000;
+      const engine = parseInt(data.vol) / 1000;   
       return coef * age * engine;
     }
     case "E":
       return parseInt(data.kvt);
     default:
       const coef = parseFloat(data.vol) <= 3500 ? 50 : 100;
-      const ages = date.getFullYear() - parseInt(data.year);
+      const ages = date.getFullYear() - parseInt(data.year) + isNov;
       const age = ages < 15 ? ages : 15;
       const engine = parseInt(data.vol) / 1000;
       return coef * age * engine;
