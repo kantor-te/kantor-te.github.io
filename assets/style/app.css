@@ -191,14 +191,22 @@ body.preloader-site {
   display: flex;
   height: 100%;
   width: 100%;
+  position: absolute;
+  z-index: 999;
+  background: #fff;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }
-#calc-loader{
+#calc-loader,
+#tracking-loader {
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -212,7 +220,7 @@ body.preloader-site {
   -ms-flex-align: center;
   align-items: center;
   top: 0;
-  background: rgba(255,255,255,0.75);
+  background: rgba(255, 255, 255, 0.75);
   display: none;
 }
 .bt-spinner {
@@ -409,6 +417,7 @@ nav a:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  flex:1;
   padding: 0;
   margin: 0 30px;
 }
@@ -639,6 +648,7 @@ header nav a {
   align-self: center;
   display: -webkit-box;
   display: -ms-flexbox;
+  align-items: center;
   display: flex;
 }
 .geo-block div {
@@ -646,11 +656,27 @@ header nav a {
   font-size: 19.4px;
   line-height: 1.41;
   color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 .geo-block img {
   width: 18px;
   height: 25px;
   margin-right: 15px;
+}
+
+.geo-block span.city {
+  font-size: 12px;
+}
+.geo-block span.address {
+  font-weight: 600;
+}
+.geo-block span.trc {
+  font-size: 16px;
+}
+.geo-block span.desc {
+  font-size: 12px;
 }
 .mobile-menu {
   width: 265px;
@@ -698,13 +724,13 @@ header nav a {
 }
 .mobile-menu .phoneNumbers-block {
   margin-right: 0px;
-  padding-left: 50px;
+  padding-left: 30px;
 }
 .mobile-menu .phoneNumbers-block li {
   font-size: 14.5px;
 }
 .mobile-menu .geo-block {
-  margin-left: 56px;
+  margin-left: 32px;
   margin-top: 7px;
 }
 .mobile-menu .geo-block img {
@@ -712,7 +738,7 @@ header nav a {
 }
 .mobile-menu .geo-block div {
   font-size: 14.5px;
-  width: 130px;
+  text-align: left;
 }
 .mobile-menu .social-icons {
   display: -webkit-box;
@@ -1294,9 +1320,12 @@ header nav a {
   text-align: center;
   color: #000000;
 }
+#hot-deals {
+  margin-top: 78px;
+}
 .hot-deals-title {
   max-width: 1206px;
-  margin: 78px auto 0 auto;
+  margin: 0 auto;
   font-size: 30px;
   font-weight: 300;
   font-style: normal;
@@ -1304,6 +1333,41 @@ header nav a {
   text-align: center;
   color: #000000;
 }
+.our-location {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.our-location .geo-block {
+  margin: 24px;
+  padding: 20px 40px;
+  border: 1px solid #f2ee18;
+  border-radius: 50px;
+  height: 120px;
+  min-width: 300px;
+  justify-content: center;
+}
+.our-location .geo-block div {
+  color: #000;
+  width: fit-content;
+}
+
+.our-location .geo-block span.city {
+  font-size: 16px;
+}
+.our-location .geo-block span.address {
+  font-size: 22px;
+  font-weight: 600;
+}
+.our-location .geo-block span.trc {
+  font-size: 20px;
+}
+.our-location .geo-block span.desc {
+  font-size: 16px;
+}
+
 .hot-deals-social-icons {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1375,6 +1439,53 @@ header nav a {
 }
 .slick-prev {
   left: -47px;
+}
+
+#tracking {
+  position: relative;
+  max-width: 900px;
+  margin: 65.3px auto 0;
+  font-size: 20px;
+}
+#tracking .tracking-container {
+  margin-top: 3rem;
+  justify-content: space-around;
+  border-color: #4e4774;
+}
+#tracking .btn#tracking-submit {
+  width: 100%;
+  padding: 1rem;
+  font-size: 20px;
+}
+#tracking .tracking-container {
+  padding: 0 1rem;
+}
+#tracking .form-group label {
+  line-height: 2;
+}
+#tracking .form-control {
+  padding: 1rem;
+  font-size: 1.25rem;
+  height: fit-content;
+}
+.tracking-container .input-group {
+  padding: 0;
+}
+#tracking-results {
+  display: none;
+}
+#tracking-results h3 {
+  margin-bottom: 30px;
+}
+#tracking-results .tracking-block-results p {
+  padding: 8px 24px;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 0.5px solid #fff;
+}
+
+#tracking-no-results {
+  display: none;
 }
 
 #calculator {
@@ -1623,7 +1734,7 @@ header nav a {
   flex-wrap: wrap;
   justify-content: space-around;
 }
-.step-foot .btn{
+.step-foot .btn {
   flex: 0 0 50%;
 }
 .step-panel .dropdown-menu {
@@ -1647,8 +1758,8 @@ header nav a {
 .car-block-results p {
   display: none;
 }
-#total{
+#total {
   font-weight: 600;
-    border-bottom: 2px solid #f2ee18;
-    letter-spacing: 2px;
+  border-bottom: 2px solid #f2ee18;
+  letter-spacing: 2px;
 }

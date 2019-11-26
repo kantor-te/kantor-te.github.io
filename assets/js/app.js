@@ -43,7 +43,7 @@ const Fees = {
       { from: 2000.0, to: 3999.99, price: 79.0 },
       { from: 4000.0, to: 5999.99, price: 89.0 },
       { from: 6000.0, to: 7999.99, price: 99.0 },
-      { from: 4000.0, to: 999999.99, price: 119.0 }
+      { from: 8000.0, to: 999999.99, price: 119.0 }
     ]
   },
   copart: {
@@ -112,13 +112,14 @@ const result = {
 //     $('body').addClass('preloader-site');
 // });
 
-$(document).ready(function() {
+$(document).ready(function () {
   $("body").removeClass("preloader-site");
   $(".loader").hide();
   $(".top-menu").css("visibility", "visible");
   initEventHandlers();
   calcEvenHandlers();
   onSelectAuction();
+  trackingSearchEvents();
 });
 
 function initEventHandlers() {
@@ -159,7 +160,7 @@ function initEventHandlers() {
   $(".accordion div")
     .hide()
     .prev()
-    .click(function() {
+    .click(function () {
       $(".accordion div")
         .not(this)
         .slideUp();
@@ -175,11 +176,11 @@ function initEventHandlers() {
   $("#call-form input").change(event =>
     event.target.value !== ""
       ? $(event.target)
-          .next()
-          .css("display", "none")
+        .next()
+        .css("display", "none")
       : $(event.target)
-          .next()
-          .css("display", "block")
+        .next()
+        .css("display", "block")
   );
 
   $('.main-nav a[href^="#"]').click(event => {
@@ -200,13 +201,13 @@ function initEventHandlers() {
     }
   });
 
-  $(".car-item").click(function() {
+  $(".car-item").click(function () {
     $(this)
       .find(".modal")
       .addClass("active");
   });
 
-  $(".auctions-section .auctions-desc-btn").click(function() {
+  $(".auctions-section .auctions-desc-btn").click(function () {
     $(this)
       .parent()
       .parent()
@@ -214,7 +215,7 @@ function initEventHandlers() {
       .addClass("active");
   });
 
-  $(".close").click(function(event) {
+  $(".close").click(function (event) {
     $(this)
       .parent()
       .parent()
@@ -242,14 +243,14 @@ function initEventHandlers() {
     infinite: true
   });
 
-  $(".modal-content .call-to-me-btn").click(function() {
+  $(".modal-content .call-to-me-btn").click(function () {
     const modal = $(this).parents(".modal")[0];
 
     $(modal).removeClass("active");
     event.stopPropagation();
   });
 
-  $("form#mc-embedded-subscribe-form").on("submit", function(t) {
+  $("form#mc-embedded-subscribe-form").on("submit", function (t) {
     t.preventDefault();
     const e = $(this);
     let data = e.serialize().split("&");
@@ -271,14 +272,14 @@ function initEventHandlers() {
       cache: !1,
       dataType: "jsonp",
       contentType: "application/json; charset=utf-8",
-      success: function(t) {
+      success: function (t) {
         alert("Ми приняли інформацію, дякую"),
           e[0].reset(),
           $("form input, form textarea").removeClass("active");
       }
     });
   });
-  $("#nav-tab").on("click", ".nav-item", function() {
+  $("#nav-tab").on("click", ".nav-item", function () {
     $("#results").css("display", "none");
     $("#no-results").css("display", "none");
   });
@@ -294,7 +295,7 @@ function calcEvenHandlers() {
     kvt: 0
   };
 
-  $("#fuel-type .dropdown-item").on("click", function(e) {
+  $("#fuel-type .dropdown-item").on("click", function (e) {
     e.preventDefault();
     $("#engine-type > span").text($(e.target).attr("data-type-name"));
     const fuel = $(e.target).attr("data-type");
@@ -312,30 +313,30 @@ function calcEvenHandlers() {
     taxData.fuelType = fuel;
   });
 
-  $("#cur-type .dropdown-item").on("click", function(e) {
+  $("#cur-type .dropdown-item").on("click", function (e) {
     e.preventDefault();
     $("#currencyType > span").text($(this).attr("data-type"));
     taxData.ctype = $(this).attr("data-type");
   });
-  $("#volumes").on("input", function() {
+  $("#volumes").on("input", function () {
     taxData.vol = $(this).val();
   });
-  $("#kvt").on("input", function() {
+  $("#kvt").on("input", function () {
     taxData.kvt = $(this).val();
   });
-  $("#price").on("input", function() {
+  $("#price").on("input", function () {
     taxData.price = $(this).val();
   });
-  $("#year").on("input", function() {
+  $("#year").on("input", function () {
     taxData.year = $(this).val();
   });
-  $("#lotNum").on("input", function() {
+  $("#lotNum").on("input", function () {
     auctionDataReq.lotNum = $(this).val();
   });
-  $("#lot-price").on("input", function() {
+  $("#lot-price").on("input", function () {
     auctionDataReq.lotPrice = parseInt($(this).val());
   });
-  $("form#cat-tax-calc").on("submit", function(e) {
+  $("form#cat-tax-calc").on("submit", function (e) {
     e.preventDefault();
     auctionDataReq.lotPrice = 0;
 
@@ -346,6 +347,7 @@ function calcEvenHandlers() {
     calcPrice(taxData);
   });
 }
+
 function onSelectAuction() {
   function triggerClick(elem) {
     $(elem).click();
@@ -364,7 +366,7 @@ function onSelectAuction() {
   // controls
   $btn_next.prop("disabled", true);
 
-  $btn_next.on("click", async function() {
+  $btn_next.on("click", async function () {
     $tab_active = $progressSteps.find(".active");
     $tab_active.removeClass("active");
     $tab_active.next().addClass("active");
@@ -373,7 +375,7 @@ function onSelectAuction() {
     $step_active.next().addClass("is-active");
   });
 
-  $btn_prev.on("click", function() {
+  $btn_prev.on("click", function () {
     $tab_active = $progressSteps.find(".active");
     $tab_active.removeClass("active");
     $tab_active.prev().addClass("active");
@@ -385,7 +387,7 @@ function onSelectAuction() {
     $("#results").css("display", "none");
   });
   // dropdowns
-  $auctionsDdItem.on("click", function() {
+  $auctionsDdItem.on("click", function () {
     auctionDataReq.type = $(this).attr("data-value");
     $btn_next.prop("disabled", false);
     auctionDataReq.lotNum = 0;
@@ -393,11 +395,12 @@ function onSelectAuction() {
     $auctionsDdBtn.children().text($(this).text() || "Виберіть аукціон");
   });
 
-  $searchCar.on("click", function() {
+  $searchCar.on("click", function () {
     getAuctionCar(auctionDataReq);
     $("#calc-loader").css("display", "flex");
   });
 }
+
 function carPrise(data) {
   let date = new Date();
   if (isNaN(data.vol)) {
@@ -411,13 +414,13 @@ function carPrise(data) {
     $("#excise").css("color", "white");
     $("#needMoreData").css("display", "none");
   }
-  const isNov = date.getMonth() + 1 >= 11 ? 1 : 0; 
+  const isNov = date.getMonth() + 1 >= 11 ? 1 : 0;
   switch (data.fuelType) {
     case "D": {
       const coef = parseFloat(data.vol) <= 3500 ? 75 : 150;
       const ages = date.getFullYear() - parseInt(data.year) + isNov;
       const age = ages < 15 ? ages : 15;
-      const engine = parseInt(data.vol) / 1000;   
+      const engine = parseInt(data.vol) / 1000;
       return coef * age * engine;
     }
     case "E":
@@ -430,6 +433,7 @@ function carPrise(data) {
       return coef * age * engine;
   }
 }
+
 function calcPrice(carData) {
   // const actualCCY = currentCurrency.find(i => i.ccy === carData.ctype),
   const { lotPrice, type } = auctionDataReq;
@@ -549,14 +553,10 @@ const parseData = car => {
 };
 
 const getFees = (price, feeRange) => {
-  let res = 0;
-  feeRange.forEach(fee => {
-    if (price >= fee.from && price < fee.to) {
-      res = parseInt(fee.price);
-    }
-  });
-  return res;
-};
+ return feeRange.reduce((res, fee) => (
+    res += (price >= fee.from && price < fee.to) ? fee.price : 0
+  ), 0)
+}
 
 const calcFee = (lotPrice, type) => {
   switch (type) {
@@ -567,16 +567,73 @@ const calcFee = (lotPrice, type) => {
           : parseInt(lotPrice) * 0.04;
       return saleFee + getFees(parseInt(lotPrice), Fees.copart.olb) + 59 + 39;
     case "i": {
-      const standard = getFees(parseInt(lotPrice), Fees.iaai.standard),
-        internet = getFees(parseInt(lotPrice), Fees.iaai.internetBit),
-        graterRange =
-          parseInt(lotPrice) >= 7500 && parseInt(lotPrice) < 20000
-            ? parseFloat(lotPrice) * 0.01 + 500
-            : 0,
-        grater = parseInt(lotPrice) >= 20000 ? parseFloat(lotPrice) * 0.04 : 0;
-      return standard + internet + grater + 59 + graterRange;
+      let standard = 0;
+      if (parseInt(lotPrice) < 7500) {
+        standard = getFees(parseInt(lotPrice), Fees.iaai.standard)
+      } else if (parseInt(lotPrice) >= 7500 && parseInt(lotPrice) < 20000) {
+        standard = parseFloat(lotPrice) * 0.01 + 500
+      } else {
+        standard = parseFloat(lotPrice) * 0.04
+      }
+      const internet = getFees(parseInt(lotPrice), Fees.iaai.internetBit);
+
+      return standard + internet + 59;
     }
     default:
       return 0;
   }
 };
+
+const trackingSearchEvents = () => {
+  const trackInfo = {
+    lot: "",
+    vin: ""
+  };
+
+  $("#track-lot").on("input", function () {
+    trackInfo.lot = $(this).val();
+  });
+  $("#track-vin").on("input", function () {
+    trackInfo.vin = $(this).val();
+  });
+
+  $("#tracking-submit").on("click", event => {
+    event.preventDefault();
+    getTrackData(trackInfo);
+    $("#tracking-loader").css("display", "flex");
+  });
+};
+
+const getTrackData = async trackingData => {
+  const url = `http://167.71.62.234:5555/api/w8?l=${trackingData.lot}&v=${trackingData.vin}`;
+  $("#tracking-no-results").css("display", "none");
+  await fetch(url)
+    .then(response => response.json())
+    .then(data => renderTrackData(data))
+    .catch(error => {
+      renderNoTrackRes();
+      console.error("Error", error);
+    });
+};
+
+const renderTrackData = trackData => {
+  Object.keys(trackData).forEach(key => {
+    $(`#tr-${key}`)
+      .text(trackData[key] ? trackData[key] : "-")
+      .parent()
+      .css("display", "flex");
+  });
+
+  $("#tracking-loader").css("display", "none");
+  $("#tracking-results").css("display", "block");
+};
+
+const renderNoTrackRes = () => {
+  $(`.tracking-block-results .track-res-data`)
+    .text('-')
+    .parent()
+    .css("display", "flex");
+  $("#tracking-results").css("display", "none");
+  $("#tracking-no-results").css("display", "block");
+  $("#tracking-loader").css("display", "none");
+}
